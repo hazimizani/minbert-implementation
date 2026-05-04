@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Datasets (download separately — see README)
+data/
+
+# Pre-trained model cache (downloaded by setup.sh / from_pretrained)
+bert-base-uncased/
+*.bin
+
+# Training outputs
+outputs/
+*.pt
+*-output.txt
+*-train-log.txt
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
