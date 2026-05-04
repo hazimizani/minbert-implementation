@@ -12,11 +12,11 @@ data/
 bert-base-uncased/
 *.bin
 
-# Training outputs
-outputs/
+# Trained model checkpoints — too large for git (~1.3 GB each)
 *.pt
-*-output.txt
-*-train-log.txt
+
+# Re-run training outputs (committed historical results live in results/)
+outputs/
 
 # OS / editors
 .DS_Store

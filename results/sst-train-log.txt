@@ -1,0 +1,20 @@
+args: {'train': 'data/sst-train.txt', 'dev': 'data/sst-dev.txt', 'test': 'data/sst-test.txt', 'seed': 1234, 'epochs': 10, 'option': 'finetune', 'use_gpu': False, 'dev_out': 'outputs/sst-dev-output.txt', 'test_out': 'outputs/sst-test-output.txt', 'filepath': 'outputs/sst-model.pt', 'batch_size': 8, 'hidden_dropout_prob': 0.3, 'lr': 1e-05}
+load 8544 data from data/sst-train.txt
+load 1101 data from data/sst-dev.txt
+save the model to outputs/sst-model.pt
+epoch 0: train loss :: 1.260, train acc :: 0.603, dev acc :: 0.520
+epoch 1: train loss :: 0.990, train acc :: 0.729, dev acc :: 0.519
+save the model to outputs/sst-model.pt
+epoch 2: train loss :: 0.770, train acc :: 0.811, dev acc :: 0.523
+epoch 3: train loss :: 0.580, train acc :: 0.895, dev acc :: 0.521
+epoch 4: train loss :: 0.409, train acc :: 0.931, dev acc :: 0.505
+epoch 5: train loss :: 0.279, train acc :: 0.938, dev acc :: 0.499
+epoch 6: train loss :: 0.194, train acc :: 0.974, dev acc :: 0.516
+epoch 7: train loss :: 0.162, train acc :: 0.977, dev acc :: 0.506
+epoch 8: train loss :: 0.143, train acc :: 0.976, dev acc :: 0.493
+epoch 9: train loss :: 0.106, train acc :: 0.978, dev acc :: 0.495
+load model from outputs/sst-model.pt
+load 1101 data from data/sst-dev.txt
+load 2210 data from data/sst-test.txt
+dev acc :: 0.523
+test acc :: 0.545

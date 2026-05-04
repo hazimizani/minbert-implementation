@@ -1,0 +1,37 @@
+args: {'train': 'data/sst-train.txt', 'dev': 'data/sst-dev.txt', 'test': 'data/sst-test.txt', 'seed': 11711, 'epochs': 5, 'option': 'ensemble', 'use_gpu': False, 'dev_out': 'outputs/sst-ensemble-dev-output.txt', 'test_out': 'outputs/sst-ensemble-test-output.txt', 'filepath': 'outputs/sst-ensemble-model.pt', 'batch_size': 8, 'hidden_dropout_prob': 0.3, 'lr': 1e-05}
+load 8544 data from data/sst-train.txt
+load 1101 data from data/sst-dev.txt
+load 2210 data from data/sst-test.txt
+
+=== Training model 1/3 with seed=1234 ===
+save the model to outputs/sst-ensemble-model-seed1234.pt
+epoch 0: train loss :: 1.260, train acc :: 0.603, dev acc :: 0.520
+epoch 1: train loss :: 0.990, train acc :: 0.729, dev acc :: 0.519
+save the model to outputs/sst-ensemble-model-seed1234.pt
+epoch 2: train loss :: 0.770, train acc :: 0.811, dev acc :: 0.523
+epoch 3: train loss :: 0.580, train acc :: 0.895, dev acc :: 0.521
+epoch 4: train loss :: 0.409, train acc :: 0.931, dev acc :: 0.505
+
+=== Training model 2/3 with seed=11711 ===
+save the model to outputs/sst-ensemble-model-seed11711.pt
+epoch 0: train loss :: 1.250, train acc :: 0.592, dev acc :: 0.492
+save the model to outputs/sst-ensemble-model-seed11711.pt
+epoch 1: train loss :: 0.959, train acc :: 0.719, dev acc :: 0.506
+epoch 2: train loss :: 0.756, train acc :: 0.833, dev acc :: 0.496
+epoch 3: train loss :: 0.564, train acc :: 0.912, dev acc :: 0.500
+save the model to outputs/sst-ensemble-model-seed11711.pt
+epoch 4: train loss :: 0.391, train acc :: 0.938, dev acc :: 0.511
+
+=== Training model 3/3 with seed=42 ===
+save the model to outputs/sst-ensemble-model-seed42.pt
+epoch 0: train loss :: 1.253, train acc :: 0.605, dev acc :: 0.503
+save the model to outputs/sst-ensemble-model-seed42.pt
+epoch 1: train loss :: 0.967, train acc :: 0.720, dev acc :: 0.521
+epoch 2: train loss :: 0.763, train acc :: 0.827, dev acc :: 0.520
+epoch 3: train loss :: 0.567, train acc :: 0.907, dev acc :: 0.518
+save the model to outputs/sst-ensemble-model-seed42.pt
+epoch 4: train loss :: 0.404, train acc :: 0.940, dev acc :: 0.530
+
+=== Ensemble evaluation (3 models) ===
+ensemble dev acc :: 0.531
+ensemble test acc :: 0.538

@@ -59,13 +59,26 @@ bash run_exp.sh
 
 Runs four experiments: SST + CF-IMDB, each with single-seed fine-tuning and a multi-seed ensemble. Outputs land in `outputs/`.
 
-Reference accuracies (from the original assignment):
+## My results
+
+| Dataset | Setting | Dev Acc | Test Acc | vs. Reference |
+|---|---|---|---|---|
+| SST (5-class)    | Baseline finetune | 0.523 | 0.545 | +0.8% / +1.9% |
+| SST (5-class)    | **Ensemble (3 seeds)** | **0.531** | 0.538 | +1.6% |
+| CF-IMDB (binary) | Baseline finetune | 0.963 | 0.512 | −0.3% |
+| CF-IMDB (binary) | **Ensemble (3 seeds)** | **0.967** | 0.508 | +0.1% |
+
+Beyond the base scaffold, I implemented multi-seed ensembling, an enhanced multi-pool classification head, learning-rate warmup with linear decay, and label smoothing. Multi-seed ensembling was the most effective; the others did not beat the baseline on these small datasets. Full training logs and analysis are under [`results/`](results/) — see [`results/REPORT.md`](results/REPORT.md).
+
+Reference accuracies from the original assignment (for comparison):
 
 | Setting | Dev | Test |
 |---|---|---|
 | SST pretrain (frozen BERT)      | 0.391 ± 0.007 | 0.403 ± 0.008 |
 | SST finetune                    | 0.515 ± 0.004 | 0.526 ± 0.008 |
 | CF-IMDB finetune                | 0.966 ± 0.007 | — |
+
+> **Note on model checkpoints:** Each fine-tuned checkpoint is ~1.3 GB, which exceeds GitHub's 100 MB per-file limit. Predictions and full training logs are committed under `results/`; you can re-train the checkpoints yourself by running `bash run_exp.sh`.
 
 ## Attribution
 

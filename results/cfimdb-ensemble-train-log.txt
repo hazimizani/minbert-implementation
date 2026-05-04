@@ -1,0 +1,37 @@
+args: {'train': 'data/cfimdb-train.txt', 'dev': 'data/cfimdb-dev.txt', 'test': 'data/cfimdb-test.txt', 'seed': 11711, 'epochs': 5, 'option': 'ensemble', 'use_gpu': False, 'dev_out': 'outputs/cfimdb-ensemble-dev-output.txt', 'test_out': 'outputs/cfimdb-ensemble-test-output.txt', 'filepath': 'outputs/cfimdb-ensemble-model.pt', 'batch_size': 8, 'hidden_dropout_prob': 0.3, 'lr': 1e-05}
+load 1707 data from data/cfimdb-train.txt
+load 245 data from data/cfimdb-dev.txt
+load 488 data from data/cfimdb-test.txt
+
+=== Training model 1/3 with seed=1234 ===
+save the model to outputs/cfimdb-ensemble-model-seed1234.pt
+epoch 0: train loss :: 0.523, train acc :: 0.971, dev acc :: 0.939
+epoch 1: train loss :: 0.114, train acc :: 0.980, dev acc :: 0.935
+save the model to outputs/cfimdb-ensemble-model-seed1234.pt
+epoch 2: train loss :: 0.051, train acc :: 0.996, dev acc :: 0.963
+epoch 3: train loss :: 0.026, train acc :: 0.996, dev acc :: 0.963
+epoch 4: train loss :: 0.024, train acc :: 0.998, dev acc :: 0.955
+
+=== Training model 2/3 with seed=11711 ===
+save the model to outputs/cfimdb-ensemble-model-seed11711.pt
+epoch 0: train loss :: 0.455, train acc :: 0.983, dev acc :: 0.951
+epoch 1: train loss :: 0.079, train acc :: 0.994, dev acc :: 0.951
+save the model to outputs/cfimdb-ensemble-model-seed11711.pt
+epoch 2: train loss :: 0.037, train acc :: 0.998, dev acc :: 0.955
+epoch 3: train loss :: 0.015, train acc :: 0.998, dev acc :: 0.943
+save the model to outputs/cfimdb-ensemble-model-seed11711.pt
+epoch 4: train loss :: 0.025, train acc :: 0.998, dev acc :: 0.971
+
+=== Training model 3/3 with seed=42 ===
+save the model to outputs/cfimdb-ensemble-model-seed42.pt
+epoch 0: train loss :: 0.384, train acc :: 0.982, dev acc :: 0.955
+epoch 1: train loss :: 0.081, train acc :: 0.992, dev acc :: 0.955
+save the model to outputs/cfimdb-ensemble-model-seed42.pt
+epoch 2: train loss :: 0.046, train acc :: 0.996, dev acc :: 0.959
+epoch 3: train loss :: 0.033, train acc :: 0.998, dev acc :: 0.955
+save the model to outputs/cfimdb-ensemble-model-seed42.pt
+epoch 4: train loss :: 0.020, train acc :: 0.998, dev acc :: 0.963
+
+=== Ensemble evaluation (3 models) ===
+ensemble dev acc :: 0.967
+ensemble test acc :: 0.508
